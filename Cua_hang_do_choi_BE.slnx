@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="Cua_hang_do_choi_BE/Cua_hang_do_choi_BE.csproj" />
+  <Project Path="Application/Application.csproj" Id="e942e273-b8ac-4b08-ab7c-8c1d8ab65545" />
+  <Project Path="Core/Core.csproj" Id="82ab99c8-a09f-4d15-b952-7441c961a433" />
+  <Project Path="Cua_hang_do_choi_BE/API.csproj" />
+  <Project Path="DataAccess/DataAccess.csproj" Id="5769f292-9702-4ad0-80aa-d10342fb22b0" />
+  <Project Path="Shared/Shared.csproj" Id="094137b7-d2cc-4adf-975f-e0bdc74b472f" />
 </Solution>
