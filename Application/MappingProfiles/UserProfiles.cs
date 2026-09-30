@@ -37,8 +37,7 @@ namespace Application.MappingProfiles
                 )
                 .ForMember(
                     dest => dest.StaffType,
-                    opt => opt.MapFrom(src =>
-                        src.StaffType.ToString())
+                    opt => opt.MapFrom(src => src.StaffType)
                 )
                 .ForMember(
                     dest => dest.CreatedBy,
