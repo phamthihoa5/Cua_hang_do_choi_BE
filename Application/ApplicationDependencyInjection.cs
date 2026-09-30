@@ -1,6 +1,8 @@
 ﻿using Application.AppService;
+using Application.AppService.Auth;
 using Application.AppService.User;
 using Application.Interface;
+using Application.IService.Auth;
 using Application.IService.User;
 using Application.MappingProfiles;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,19 +14,17 @@ public static class ApplicationDependencyInjection
     public static void AddApplicationConfiguration(
         this IServiceCollection services)
     {
-        // Unit Of Work
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-        // Quan ly nhan vien
-        services.AddScoped<IStaffService, StaffService>();
+        // AUTH
+        services.AddScoped<IAuthService, AuthService>();
 
-        // Doc UserId tu JWT
+        // STAFF
+        services.AddScoped<IStaffService, StaffService>();
         services.AddScoped<ITokenService, TokenService>();
 
-        // HttpContext cho TokenService
         services.AddHttpContextAccessor();
 
-        // AutoMapper
         services.AddAutoMapper(cfg =>
         {
             cfg.AddProfile<UserProfiles>();
