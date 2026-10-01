@@ -1,8 +1,11 @@
+
 using Application.AppService.Warehouse;
 using Application.IService;
 using DataAccess.Common;
 using DataAccess.Repo.Warehouse;
 using Microsoft.EntityFrameworkCore;
+using Application.AppService.Supplier;
+using DataAccess.Repo.Supplier;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped<IWarehouseRepository, WarehouseRepository>();
 builder.Services.AddScoped<IWarehouseService, WarehouseService>();
+
+builder.Services.AddScoped<ISupplierRepository, SupplierRepository>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
 
 builder.Services.AddControllersWithViews();
 
